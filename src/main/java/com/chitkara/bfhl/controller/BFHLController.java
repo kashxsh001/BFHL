@@ -22,7 +22,10 @@ public class BFHLController {
     public BFHLController(BFHLService service) {
         this.service = service;
     }
-
+    @GetMapping("/")
+    public String home() {
+        return "BFHL Service is running!";
+    }
     @GetMapping("/health")
     public ResponseEntity<ResponseDTO> health() {
         return ResponseEntity.ok(
